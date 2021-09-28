@@ -24,7 +24,7 @@ const LoginScreen = (props) => {
           <PrimaryButton
             mode="contained"
             icon="account-plus"
-            onPress={() => console.log("Pressed")}
+            onPress={() => props.navigation.navigate("Welcome")}
           >
             Login
           </PrimaryButton>
