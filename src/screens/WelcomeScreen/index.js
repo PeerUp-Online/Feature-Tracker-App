@@ -9,7 +9,7 @@ import AddProd from "../../components/svg/AddProd";
 
 import theme from "../../theme";
 
-const WelcomeScreen = () => {
+const WelcomeScreen = (props) => {
   return (
     <View style={styles.container}>
       <View style={styles.boxOne}>
@@ -20,7 +20,12 @@ const WelcomeScreen = () => {
           <PrimaryInput label="Enter Product Code" />
         </View>
         <View style={styles.inputContainer}>
-          <PrimaryButton mode="contained">Show Product</PrimaryButton>
+          <PrimaryButton
+            mode="contained"
+            onPress={() => props.navigation.navigate("BottomTabNav")}
+          >
+            Show Product
+          </PrimaryButton>
         </View>
       </View>
       <Divider />
@@ -45,6 +50,7 @@ const styles = StyleSheet.create({
   boxOne: {
     alignItems: "center",
     justifyContent: "center",
+    backgroundColor: theme.colors.background,
     minHeight: "55%",
   },
   inputContainer: {
@@ -54,7 +60,6 @@ const styles = StyleSheet.create({
   boxTwo: {
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: theme.colors.background,
     minHeight: "45%",
   },
 });
