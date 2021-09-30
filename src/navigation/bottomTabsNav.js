@@ -31,7 +31,13 @@ const bottomTabsNav = () => {
         tabBarInactiveTintColor: theme.colors.accent,
       })}
     >
-      <BottomTab.Screen name="Product List" component={ProductListScreen} />
+      <BottomTab.Screen
+        name="Product List"
+        component={ProductListScreen}
+        options={{
+          headerShown: false,
+        }}
+      />
       <BottomTab.Screen
         name="Home"
         component={HomeScreen}

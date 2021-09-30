@@ -4,7 +4,7 @@ import { Card, Title, Caption, Subheading, Chip } from "react-native-paper";
 import theme from "../../../theme";
 const ProductCard = (props) => {
   return (
-    <Card style={styles.card}>
+    <Card style={styles.card} elevation={props.elevation ? props.elevation : 1}>
       <View style={styles.container}>
         <Card.Cover style={styles.img} source={{ uri: `${props.cover}` }} />
         <Card.Content style={styles.content}>

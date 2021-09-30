@@ -1,11 +1,5 @@
 import React from "react";
-import {
-  StyleSheet,
-  View,
-  StatusBar,
-  Dimensions,
-  ScrollView,
-} from "react-native";
+import { StyleSheet, View, Dimensions, ScrollView } from "react-native";
 import { Subheading } from "react-native-paper";
 
 import HomeHeader from "./HomeHeader";
@@ -13,14 +7,12 @@ import InfoCard from "./InfoCard";
 import ProductCard from "../../../components/ui/ProductCard";
 import { PrimaryButton } from "../../../components/ui/Button";
 import theme from "../../../theme";
+import DeviceStatusBar from "../../../components/utils/StatusBar";
 
 const HomeScreen = () => {
   return (
     <>
-      <StatusBar
-        backgroundColor={theme.colors.primary}
-        barStyle="dark-content"
-      />
+      <DeviceStatusBar />
       <HomeHeader />
       <View style={styles.body}>
         <View style={styles.infoContainer}>

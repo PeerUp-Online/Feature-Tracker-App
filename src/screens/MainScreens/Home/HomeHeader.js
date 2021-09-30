@@ -1,7 +1,8 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, View } from "react-native";
 import { Caption, Headline, Avatar } from "react-native-paper";
 import { Feather } from "@expo/vector-icons";
+import Constants from "expo-constants";
 
 import IconBtn from "../../../components/ui/IconBtn";
 import theme from "../../../theme";
@@ -44,11 +45,12 @@ export default HomeHeader;
 const styles = StyleSheet.create({
   header: {
     backgroundColor: theme.colors.primary,
+    paddingTop: Constants.statusBarHeight + 15,
     paddingHorizontal: 24,
     paddingVertical: 10,
     flexDirection: "row",
     justifyContent: "space-between",
-    elevation: 20,
+    elevation: 16,
   },
   headerIcons: {
     flexDirection: "row",
