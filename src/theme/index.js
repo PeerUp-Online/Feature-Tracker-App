@@ -3,6 +3,7 @@ import fontConfig from "./fontConfig";
 
 const theme = {
   ...DefaultTheme,
+  dark: true,
   fonts: configureFonts(fontConfig),
   colors: {
     ...DefaultTheme.colors,

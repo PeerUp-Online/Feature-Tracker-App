@@ -1,14 +1,16 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StatusBar } from "react-native";
+import theme from "../../../theme";
 
 const ProductsList = () => {
   return (
-    <View>
-      <Text>ProductsList</Text>
-    </View>
+    <>
+      <StatusBar
+        backgroundColor={theme.colors.accent}
+        barStyle="light-content"
+      />
+    </>
   );
 };
 
 export default ProductsList;
-
-const styles = StyleSheet.create({});

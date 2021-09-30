@@ -3,8 +3,8 @@ import { StyleSheet, Text, View } from "react-native";
 import { Caption, Headline, Avatar } from "react-native-paper";
 import { Feather } from "@expo/vector-icons";
 
-import IconBtn from "./IconBtn";
-import theme from "../../theme";
+import IconBtn from "../../../components/ui/IconBtn";
+import theme from "../../../theme";
 
 const HomeHeader = () => {
   return (
@@ -26,13 +26,13 @@ const HomeHeader = () => {
           color="rgba(255, 255, 255, .32)"
           onPress={() => console.log("Icon Btn Press")}
         >
-          <Feather name="grid" size={18} color="#fff" />
+          <Feather name="grid" size={20} color="#fff" />
         </IconBtn>
         <IconBtn
           color="rgba(255, 255, 255, .32)"
           onPress={() => console.log("Icon Btn Press")}
         >
-          <Feather name="box" size={18} color="#fff" />
+          <Feather name="box" size={20} color="#fff" />
         </IconBtn>
       </View>
     </View>

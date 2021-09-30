@@ -1,9 +1,17 @@
 import React from "react";
-import { StyleSheet, View, StatusBar, Dimensions } from "react-native";
-import { Caption, Headline } from "react-native-paper";
-import { Feather } from "@expo/vector-icons";
+import {
+  StyleSheet,
+  View,
+  StatusBar,
+  Dimensions,
+  ScrollView,
+} from "react-native";
+import { Subheading } from "react-native-paper";
 
-import HomeHeader from "../../../components/ui/HomeHeader";
+import HomeHeader from "./HomeHeader";
+import InfoCard from "./InfoCard";
+import ProductCard from "../../../components/ui/ProductCard";
+import { PrimaryButton } from "../../../components/ui/Button";
 import theme from "../../../theme";
 
 const HomeScreen = () => {
@@ -16,29 +24,43 @@ const HomeScreen = () => {
       <HomeHeader />
       <View style={styles.body}>
         <View style={styles.infoContainer}>
-          <View style={styles.infoBox}>
-            <View style={styles.info}>
-              <Feather name="zap" size={38} color="#fff" />
-              <View style={styles.numBox}>
-                <Headline style={[styles.whiteColor, styles.num]}>20</Headline>
-              </View>
-            </View>
-            <Caption style={[styles.whiteColor, styles.text]}>
-              New Feature Requests
-            </Caption>
-          </View>
-          <View style={styles.infoBox}>
-            <View style={styles.info}>
-              <Feather name="inbox" size={38} color="#fff" />
-              <View style={styles.numBox}>
-                <Headline style={[styles.whiteColor, styles.num]}>21</Headline>
-              </View>
-            </View>
-            <Caption style={[styles.whiteColor, styles.text]}>
-              New Votes Received
-            </Caption>
-          </View>
+          <InfoCard icon="zap" count={20} boxText="New Feature Requests" />
+          <InfoCard icon="inbox" count={50} boxText="New Votes Received" />
         </View>
+        <Subheading style={styles.cardHeading}>My Products</Subheading>
+        <ScrollView style={styles.cardContainer}>
+          <ProductCard
+            name="PeerUp"
+            url="https://peerup.online"
+            cover="https://picsum.photos/700"
+            featureCount={12}
+            completedCount={4}
+            requestCount={2}
+            voteCount={30}
+            date="12-Sept-21"
+          />
+          <ProductCard
+            name="PeerUp"
+            url="https://peerup.online"
+            cover="https://picsum.photos/700"
+            featureCount={12}
+            completedCount={4}
+            requestCount={2}
+            voteCount={30}
+            date="12-Sept-21"
+          />
+          <ProductCard
+            name="PeerUp"
+            url="https://peerup.online"
+            cover="https://picsum.photos/700"
+            featureCount={12}
+            completedCount={4}
+            requestCount={2}
+            voteCount={30}
+            date="12-Sept-21"
+          />
+        </ScrollView>
+        <PrimaryButton mode="outlined">Add New Product</PrimaryButton>
       </View>
     </>
   );
@@ -56,29 +78,16 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
   },
-  infoBox: {
-    textAlign: "center",
-    padding: 10,
-    backgroundColor: theme.colors.accent,
+  cardHeading: {
+    marginTop: 24,
+    marginBottom: 10,
+  },
+  cardContainer: {
+    backgroundColor: "#182C6119",
+    padding: 5,
     borderRadius: 8,
-    elevation: 16,
-    width: Dimensions.get("window").width / 2.5,
-  },
-  info: {
-    flexDirection: "row",
-    justifyContent: "space-around",
-    paddingBottom: 5,
-    alignItems: "center",
-  },
-  num: {
-    fontSize: 38,
-    padding: 12,
-  },
-  numBox: {
-    marginTop: 20,
-  },
-  text: {
-    textAlign: "center",
+    maxHeight: Dimensions.get("window").height / 2,
+    marginBottom: 15,
   },
   whiteColor: {
     color: "#fff",
